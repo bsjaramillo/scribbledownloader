@@ -33,7 +33,6 @@ function onCommand(userobj, command, target, args)
         {
             var scribble = new Scribble();
             scribble.src = command.substr(9);
-            scribble.setUrl(scribble.src);
             scribble.oncomplete = scribbleReceived;
             scribble.download(userobj.name);
         }
