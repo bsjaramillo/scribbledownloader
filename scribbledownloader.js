@@ -33,6 +33,7 @@ function onCommand(userobj, command, target, args)
         {
             var scribble = new Scribble();
             scribble.src = command.substr(9);
+            scribble.setUrl(scribble.src);
             scribble.oncomplete = scribbleReceived;
             scribble.download(userobj.name);
         }
@@ -53,7 +54,6 @@ function scribbleReceived(e)
     {
         var scribble = this;
         var name = this.arg;
-
         Users.local(function (u)
         {
             print(u, "\x0314--- From " + name);
